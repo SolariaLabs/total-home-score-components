@@ -1,0 +1,14 @@
+{
+  "name": "@shine-api/demo-app",
+  "version": "0.1.0",
+  "description": "A demo application that pulls in the built Total Home Score components",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "webpack-dev-server --mode=development"
+  },
+  "author": "Solaria Labs",
+  "dependencies": {
+    "@shine-api/total-home-score": "^0.1.0",
+    "@shine-api/total-home-score-js": "^0.1.0"
+  }
+}

@@ -1,0 +1,32 @@
+.score-factor-list {
+  -webkit-padding-start: 1.25rem;
+
+  & > li {
+    font-weight: lighter;
+  }
+}
+
+.score-level-title,
+.score-factors-title {
+  font-weight: bold;
+}
+
+.score-level-description {
+  font-weight: lighter;
+}
+
+.score-title {
+  border-bottom: 1px solid $light-gray;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+
+  & > span {
+    margin-left: 1rem;
+    margin-right: 0.25rem;
+  }
+}
+
+.fa-question-circle {
+  line-height: unset;
+}

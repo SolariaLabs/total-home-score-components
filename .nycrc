@@ -1,0 +1,25 @@
+{
+  "extension": [
+    ".ts",
+    ".tsx"
+  ],
+  "require": [
+    "ts-node/register"
+  ],
+  "include": [
+    "./packages/**/src/**"
+  ],
+  "exclude": [
+    "**/*.d.ts",
+    "**/types/**",
+    "**/test/**",
+    "**/demo-app/**",
+    "**/common/src/index.ts"
+  ],
+  "reporter": [
+    "cobertura",
+    "html",
+    "text-summary"
+  ],
+  "all": true
+}

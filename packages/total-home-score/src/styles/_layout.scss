@@ -1,0 +1,36 @@
+.total-home-score-widget {
+  color: $dark-gray;
+  line-height: 1.25rem;
+}
+
+.total-home-score-intro {
+  padding: 0.25rem;
+}
+
+.total-home-score-footer {
+  color: $gray;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.score-widget-body {
+  height: 9rem;
+  padding: 1.33rem 1.33rem 0;
+}
+
+.score-circle-container {
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+.score-level-container {
+  margin-bottom: 1rem;
+}
+
+.total-home-score-footer {
+  margin-top: 0.5rem;
+  
+  & > a {
+    margin-left: 0.25rem;
+  }
+}

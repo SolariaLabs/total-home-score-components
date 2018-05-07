@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Total Home Score Widgets Test Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../node_modules/@shine-api/total-home-score/dist/main.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <style>
+        body {
+          font-size: 15px;
+          font-family: Roboto,Helvetica,Arial,sans-serif;
+        }
+      </style>
+  </head>
+  <body>
+    <nav class="navbar sticky-top navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Total Home Score Test Page</a>
+    </nav>
+    <div class="container">
+      <div class="row my-5">
+        <div class='card'>
+          <div class='card-header'>
+            Total Home Score
+          </div>
+          <div class='card-body'>
+            <div id="test-container" class="col-sm-10"></div>
+          </div>
+        </div>
+          <script lang="text/javascript">
+            TotalHomeScore = {
+              apiKey: '',
+              lat: 42.3509356,
+              lon: -71.0737518,
+              id: "test-container"
+            }
+          </script>
+          <script src="../node_modules/@shine-api/total-home-score-js/dist/bundle.js"></script>
+          <script lang="text/javascript">
+            $(function () {
+              setTimeout(() => {
+                $('[data-toggle="tooltip"]').tooltip()
+              }, 1000);
+            })
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
