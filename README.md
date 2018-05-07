@@ -26,7 +26,7 @@ In order to leverage the React or vanilla javascript components, the following p
 To leverage the React component, install the following package from `npm`:
 
 ```bash
-npm install @shine-api/total-home-score
+npm install https://github.com/SolariaLabs/total-home-score-components/releases/download/v0.1.0/shine-api-total-home-score-0.1.0.tgz
 ```
 
 Once installed, this component can be leveraged in your app by passing in the `apiKey` from your Shine Api App and the `lat` and `lon` coordinates for the desired location to display information for. 
@@ -61,7 +61,7 @@ To leverage the plain javascript component, add the following two script tags to
       id: "widget-container"
     }
 </script>
-<script src="../node_modules/@shine-api/total-home-score-js/dist/bundle.js"></script>
+<script src="<path_to_js_file>"></script>
 ```
 
 The script tags will import the javascript component and place dom elements inside of the given `widget-container` element. 
