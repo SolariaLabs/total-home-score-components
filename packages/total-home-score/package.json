@@ -17,6 +17,6 @@
     "react": "^16.3.2"
   },
   "dependencies": {
-    "@shine-api/common": "https://github.com/SolariaLabs/total-home-score-components/releases/download/v0.1.0/shine-api-common-0.1.0.tgz"
+    "@shine-api/common": "^0.1.0"
   }
 }
