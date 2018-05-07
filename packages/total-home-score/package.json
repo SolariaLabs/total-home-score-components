@@ -1,0 +1,22 @@
+{
+  "name": "@shine-api/total-home-score",
+  "version": "0.1.0",
+  "description": "A react component for Total Home Score",
+  "main": "dist/TotalHomeScore.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "postbuild": "npm run build:css",
+    "build:css": "node-sass-chokidar src/styles -o dist/",
+    "watch:css": "node-sass-chokidar src/styles -o dist/ --watch --recursive",
+    "prestart:dev": "npm run build",
+    "start:dev": "npm run build:watch & npm run watch:css"
+  },
+  "author": "Solaria Labs",
+  "peerDependencies": {
+    "react": "^16.3.2"
+  },
+  "dependencies": {
+    "@shine-api/common": "https://github.com/SolariaLabs/total-home-score-components/releases/download/v0.1.0/shine-api-common-0.1.0.tgz"
+  }
+}
