@@ -12,6 +12,7 @@ Once you have created an account, you will need to generate an `apiKey` to lever
 
 ## Example of Total Home Score Component
 ![total-home-score](https://user-images.githubusercontent.com/10982483/39761499-4298d9fe-52a6-11e8-953a-30846a01e9b0.png)
+
 Note: This example wraps the component in a Bootstrap card with a header.
 
 ## Usage
