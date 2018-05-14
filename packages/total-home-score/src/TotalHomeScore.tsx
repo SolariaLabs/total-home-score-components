@@ -9,7 +9,7 @@ export interface TotalHomeScoreProps {
   apiKey: string;
   lat: number;
   lon: number;
-  callback: Function;
+  callback?: Function;
   customizations?: Customizations;
 }
 
