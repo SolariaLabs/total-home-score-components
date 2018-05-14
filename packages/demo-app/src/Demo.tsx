@@ -6,6 +6,8 @@ import '@shine-api/total-home-score/dist/main.css';
 
 const { apiKey, lat, lon } = constants;
 
+const callback = (scores: any[]) => console.log(scores);
+
 const TestApp = () =>
   (
     <div className={'card'}>
@@ -13,7 +15,7 @@ const TestApp = () =>
         Total Home Score
       </div>
       <div className={'card-body'}>
-        <TotalHomeScore apiKey={apiKey} lat={lat} lon={lon}/>
+        <TotalHomeScore apiKey={apiKey} lat={lat} lon={lon} callback={callback} />
       </div>
     </div>
   );
