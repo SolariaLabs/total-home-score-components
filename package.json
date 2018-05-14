@@ -1,6 +1,6 @@
 {
   "name": "total-home-score-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React and vanilla javascript components for rendering Total Home Score livability scores, powered by the Shine Api",
   "main": "index.js",
   "scripts": {
