@@ -8,7 +8,7 @@ import {
 } from '../types';
 
 export const buildUrl = ({ apiKey, lat, lon }: ApiParameters): string =>
-  `${TOTAL_HOME_SCORE_API}?apikey=${apiKey}&lat=${lat}&lon=${lon}`;
+  `${TOTAL_HOME_SCORE_API}?apikey=${apiKey}&lat=${lat}&lon=${lon}&app=widget`;
 
 export const fetchScores = 
   async (apiParams: ApiParameters, customizations?: Customizations):
