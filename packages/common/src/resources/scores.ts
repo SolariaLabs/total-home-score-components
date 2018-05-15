@@ -71,7 +71,7 @@ export const scoreDescriptions: DefaultStoreDescriptions = {
       description: 'Regular congestion during rush hour'
     },
     69: {
-      display: '69 Traffic',
+      display: 'Average Traffic',
       description: 'There may be some congestion during rush hour' 
     },
     100: {
