@@ -1,6 +1,6 @@
 {
   "name": "@shine-api/common",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Common library for the Total Home Score Components",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
