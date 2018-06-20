@@ -10,4 +10,4 @@ export const buckets: GenericObject<string> = {
 };
 
 export const getColor = (score: number): string =>
-  `score-${buckets[findOrDefaultByScore(score, buckets)]}`;
+  `${buckets[findOrDefaultByScore(score, buckets)]}`;

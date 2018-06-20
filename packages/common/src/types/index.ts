@@ -61,3 +61,7 @@ export type Customizations = {
   colors?: GenericObject<string>;
   descriptions?: GenericObject<CustomDescriptions>;
 };
+
+export type Event = {
+  [key: string]: any;
+};

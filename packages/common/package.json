@@ -1,6 +1,6 @@
 {
   "name": "@shine-api/common",
-  "version": "0.1.1",
+  "version": "2.0.0",
   "description": "Common library for the Total Home Score Components",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,5 +8,12 @@
     "build": "tsc",
     "start:dev": "tsc -w"
   },
-  "author": "Solaria Labs"
+  "author": "Solaria Labs",
+  "repository":  "https://github.com/SolariaLabs/total-home-score-components/tree/master/packages/common",
+  "homepage": "https://developers.solarialabs.com/",
+  "contributors": [
+    {
+      "name": "Vijay Francis"
+    }
+  ]
 }
