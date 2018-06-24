@@ -11,12 +11,18 @@ import {
 
 const configuration: GenericObject<string> = {};
 
-export const url = (endpoint: string, params: GenericObject<any> = {}): string =>
-  `${THS_API.URL}/${endpoint}?app=widget&apikey=${configuration['apiKey']}&${
-    Object.keys(params)
-      .map(key => `${key.toLowerCase()}=${params[key]}`)
-      .join('&')
-  }`;
+export const url = (endpoint: string, params?: GenericObject<any>): string => {
+  const urlParams: GenericObject<any> = {
+    app: 'widget', 
+    apiKey: configuration['apiKey'], 
+    ...params
+  };
+  const queryString = Object.keys(urlParams)
+    .map(key => `${key.toLowerCase()}=${urlParams[key]}`)
+    .join('&');
+
+  return `${THS_API.URL}/${endpoint}?${queryString}`;
+};
 
 export const setApiKey = (apiKey: string): String =>
   configuration['apiKey'] = apiKey;
@@ -26,6 +32,7 @@ export const fetchScores =
     Promise<DetailedScore[]> => {
     const thsResponse = await fetch(url(THS_API.REPORTS, apiParams));
     const { totalHomeScores } = (await thsResponse.json()) as ApiResponse;
+    setApiKey(apiParams.apiKey);
     setUser(thsResponse.headers.get('x-vcap-request-id') || '');
     return Object.keys(totalHomeScores)
       .sort((a: string, b: string) =>
