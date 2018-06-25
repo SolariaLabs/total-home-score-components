@@ -8,6 +8,6 @@
   },
   "author": "Solaria Labs",
   "dependencies": {
-    "@shine-api/common": "^0.1.0"
+    "@shine-api/common": "^2.0.0"
   }
 }
