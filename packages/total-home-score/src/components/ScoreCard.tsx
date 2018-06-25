@@ -3,28 +3,26 @@ import * as React from 'react';
 import { DetailedScore } from '@shine-api/common';
 
 const ScoreCard: React.SFC<DetailedScore> = 
-  ({ hint, score, colorClass, value, factors, descriptions }) =>
+  ({ hint, colorClass, value, factors, descriptions }) =>
     (
-    <div className={'score-widget-body'}>
-      <div className={'row score-title'}>
-        <span>{score.name} Score</span>
-        <i data-toggle="tooltip" title={hint} className={'fa fa-question-circle'}/>
-      </div>
-      <div className={'row'}>
-        <div className={'col-md-1 score-circle-container'}>
-          <div className={'score-circle ' + colorClass}>
+    <div className={'ths-score-card'}>
+        <div className={'col-4 col-md-3 score-circle-container'}>
+          <div className={'score-circle score-' + colorClass}>
             {value}
           </div>
         </div>
-        <div className={'col-md-3 score-level-container'}>
-          <div className={'score-level-title'}>
-            {descriptions.score.display}
-          </div>
-          <div className={'score-level-description'}>
-            {descriptions.score.description}
+        <div className={'col-8 col-md-3 score-level-title'}>
+          {descriptions.score.display}
+          <i data-toggle="tooltip" title={hint} className={'fa fa-question-circle ml-1'}/>
+        </div>
+        <div className={'offset-4 offset-md-0 col-6 col-md-8'}>
+          <div className={'score-level-container'}>
+            <div className={'score-level-description'}>
+              {descriptions.score.description}
+            </div>
           </div>
         </div>
-        <div className={'col-md-6'}>
+        <div className={'offset-md-3 col-md-8 score-factor-details'}>
           <div className={'score-factors-title'}>
             Why were points deducted?
           </div>
@@ -35,15 +33,11 @@ const ScoreCard: React.SFC<DetailedScore> =
                   <li key={key}>{factorDescription}</li>)
             }
           </ul>
-        </div>
       </div>
-    </div>);
+    </div>
+  );
 
 ScoreCard.defaultProps = {
-  score: {
-    id: '',
-    name: ''
-  },
   descriptions: {
     factors: [],
     score: {

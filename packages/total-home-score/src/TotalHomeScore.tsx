@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Loading } from './components/Loading';
-import { ScoreCard } from './components/ScoreCard';
+import { ScoreContainer } from './containers/ScoreContainer';
 import { ScoreError } from './components/ScoreError';
 
-import { fetchScores, totalHomeScoreIntro, Customizations, DetailedScore } from '@shine-api/common';
+import { fetchScores, setApiKey, Customizations, DetailedScore } from '@shine-api/common';
 
 export interface TotalHomeScoreProps {
   apiKey: string;
@@ -15,6 +15,7 @@ export interface TotalHomeScoreProps {
 
 export interface TotalHomeScoreState {
   scores?: DetailedScore[];
+  error?: any;
 }
 
 class TotalHomeScore extends React.Component<TotalHomeScoreProps, TotalHomeScoreState> {
@@ -24,9 +25,8 @@ class TotalHomeScore extends React.Component<TotalHomeScoreProps, TotalHomeScore
   }
 
   async componentDidMount() {
-    const { apiKey, lat, lon, callback, customizations } = this.props;
-    const scores: DetailedScore[] = await
-      fetchScores({ apiKey, lat, lon }, customizations);
+    const { callback, customizations, ...apiParams } = this.props;
+    const scores: DetailedScore[] = await fetchScores(apiParams, customizations);
 
     if (callback) {
       callback(scores);
@@ -36,24 +36,16 @@ class TotalHomeScore extends React.Component<TotalHomeScoreProps, TotalHomeScore
   }
 
   render() {
+    const { lat, lon } = this.props;
     const { scores } = this.state;
-    const scoreDisplay = scores
+    const scoreBody = scores
       ? scores.length > 0
-        ? scores.map((score, key) => <ScoreCard key={key} {...score} />)
+        ? <ScoreContainer scores={scores} lat={lat} lon={lon} />
         : <ScoreError />
       : <Loading />;
     return (
       <div id={'total-home-score'} className={'total-home-score-widget'}>
-        <div className={'total-home-score-intro'}>
-          {totalHomeScoreIntro}
-        </div>
-        {scoreDisplay}
-        <div className={'total-home-score-footer'}>
-          Total Home Score is powered by
-          <a href={'https://developers.solarialabs.com'} target="_blank">
-            Shine API
-          </a>
-        </div>
+        {scoreBody}
       </div>
     );
   }

@@ -10,14 +10,7 @@ const callback = (scores: any[]) => console.log(scores);
 
 const TestApp = () =>
   (
-    <div className={'card'}>
-      <div className={'card-header'}>
-        Total Home Score
-      </div>
-      <div className={'card-body'}>
-        <TotalHomeScore apiKey={apiKey} lat={lat} lon={lon} callback={callback} />
-      </div>
-    </div>
+    <TotalHomeScore apiKey={apiKey} lat={lat} lon={lon} callback={callback} />
   );
 
 export default TestApp;

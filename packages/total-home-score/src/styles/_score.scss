@@ -1,3 +1,21 @@
+$score-colors: (
+  low: $red,
+  below-average: $orange,
+  average: $yellow-green,
+  above-average: $green-light,
+  high: $green
+);
+
+@each $level, $color in $score-colors {
+  .score-#{$level} {
+    background-color: $color;
+  }
+  .score-#{$level}-text {
+    color: $color;
+    font-weight: bold;
+  }
+}
+
 .score-circle {
   border-radius: 50%;
   width: 4.25rem;
@@ -8,24 +26,4 @@
   font-size: 2.125rem;
   font-weight: bold;
   margin: 0 auto;
-}
-
-.score-low {
-  background-color: $red;
-}
-
-.score-below-average {
-  background-color: $orange;
-}
-
-.score-average {
-  background-color: $yellow-green;
-}
-
-.score-above-average {
-  background-color: $green-light;
-}
-
-.score-high {
-  background-color: $green;
 }
