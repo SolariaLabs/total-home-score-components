@@ -40,9 +40,11 @@ class FooterContainer extends React.Component<FCProps, FCState> {
 
   render() {
     const { areScoresUseful } = this.state;
-    const footerProps = areScoresUseful
-      ? { thumbsUp: 'selected', thumbsDown: '' }
-      : { thumbsUp: '', thumbsDown: 'selected' };
+    const footerProps = (areScoresUseful != null)
+      ? areScoresUseful
+        ? { thumbsUp: 'selected', thumbsDown: '' }
+        : { thumbsUp: '', thumbsDown: 'selected' }
+      : { thumbsUp: '', thumbsDown: '' };
 
     return (
       <Footer 
