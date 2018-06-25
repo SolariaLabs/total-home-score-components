@@ -8,7 +8,7 @@
   },
   "author": "Solaria Labs",
   "dependencies": {
-    "@shine-api/total-home-score": "^0.1.0",
-    "@shine-api/total-home-score-js": "^0.1.0"
+    "@shine-api/total-home-score": "",
+    "@shine-api/total-home-score-js": ""
   }
 }
