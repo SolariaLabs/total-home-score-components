@@ -5,7 +5,7 @@ A React component for rendering Total Home Score livability scores, powered by t
 To leverage the React component, install the following package from `npm`:
 
 ```bash
-npm install https://github.com/SolariaLabs/total-home-score-components/releases/download/v0.1.0/shine-api-total-home-score-0.1.0.tgz
+npm install @shine-api/total-home-score
 ```
 
 Once installed, this component can be leveraged in your app by passing in the `apiKey` from your Shine Api App and the `lat` and `lon` coordinates for the desired location to display information for.

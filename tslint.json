@@ -3,6 +3,7 @@
   "rules": {
     "import-name": false,
     "jsx-no-multiline-js": false,
+    "jsx-no-lambda": false,
     "no-boolean-literal-compare": true,
     "trailing-comma": false,
     "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"]

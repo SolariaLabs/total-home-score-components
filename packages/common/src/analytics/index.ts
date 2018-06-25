@@ -4,11 +4,12 @@ import { Event } from '../types';
 
 export const track = (name: string, event: Event = {}, store: boolean = false) => {
   if (store) {
-    if (localStorage.getItem(`ths_widget.tracking.${name}`)) {
+    const eventKey = `ths_widget.tracking.${name}.${JSON.stringify(event)}`;
+    if (localStorage.getItem(eventKey)) {
       log(`Skipping event [${name}]. Event previously sent.`);
       return Promise.resolve();
     }
-    localStorage.setItem(`ths_widget.tracking.${name}`, 'true');
+    localStorage.setItem(eventKey, 'true');
   }
 
   log(`Event: [${JSON.stringify({ name, ...event, user: getUser() })}]`);

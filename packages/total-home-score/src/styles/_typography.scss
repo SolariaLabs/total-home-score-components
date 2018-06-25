@@ -1,4 +1,5 @@
 .score-factor-list {
+  margin-top: 0.25rem;
   -webkit-padding-start: 1.25rem;
 
   & > li {
@@ -7,12 +8,17 @@
 }
 
 .score-level-title,
-.score-factors-title {
+.score-factors-title,
+.total-home-score-footer {
   font-weight: bold;
 }
 
 .score-level-description {
-  font-weight: lighter;
+  font-weight: bold;
+
+  @include small-view {
+    font-weight: normal;
+  }
 }
 
 .score-title {
@@ -29,4 +35,53 @@
 
 .fa-question-circle {
   line-height: unset;
+}
+
+.ths-score-tab,
+.ths-score-tab-selected {
+  text-align: center;
+  cursor: pointer;
+}
+
+.thumbs-up {
+  margin-left: 2rem;
+}
+
+.thumbs {
+  stroke: $dark-gray;
+  cursor: pointer;
+
+  &:hover {
+    fill: $dark-gray;
+  }
+
+  &.selected {
+    fill: $dark-gray;
+  }
+}
+
+.ths-score-tab-previous,
+.ths-score-tab-next {
+  align-self: center;
+  display: none;
+  cursor: pointer;
+  width: 24px;
+
+  & > .arrow {
+    fill: $dark-gray;
+    height: 1.5rem;
+  }
+
+  &.disabled {
+    cursor: auto;
+
+    & > .arrow { 
+      fill: $light-gray;
+    }
+  }
+
+  @include medium-view {
+    display: block;
+  }
+
 }
