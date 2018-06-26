@@ -83,6 +83,9 @@ class ScoreTabContainer extends React.Component<STCProps, STCState> {
     const disableNextArrow = (scores.length > totalVisible + startIndex)
       ? ''
       : 'disabled';
+    const enableNav = (scores.length > totalVisible)
+      ? 'visible'
+      : '';
     const tabs = scores.map((score, key) => (
       <ScoreTab 
         {...score}
@@ -95,14 +98,14 @@ class ScoreTabContainer extends React.Component<STCProps, STCState> {
     return (
       <div className={'ths-score-tab-container'} ref={node => this.node = node}>
         <div
-          className={`ths-score-tab-previous ${disablePrevArrow}`} 
+          className={`ths-score-tab-previous ${enableNav} ${disablePrevArrow}`} 
           onClick={() => this.previous()} 
         >
           <LeftArrow />
         </div>
         {tabs.slice(startIndex, totalVisible + startIndex)}
         <div
-          className={`ths-score-tab-next ${disableNextArrow}`}
+          className={`ths-score-tab-next ${enableNav} ${disableNextArrow}`}
           onClick={() => this.next()}
         >
           <RightArrow />
