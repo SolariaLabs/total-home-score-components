@@ -1,7 +1,4 @@
 .score-factor-list {
-  margin-top: 0.25rem;
-  -webkit-padding-start: 1.25rem;
-
   & > li {
     font-weight: lighter;
   }
@@ -41,6 +38,14 @@
 .ths-score-tab-selected {
   text-align: center;
   cursor: pointer;
+  font-size: 1.75rem;
+  font-weight: normal;
+  line-height: 1.25;
+
+  .score-tab-name {
+    font-weight: lighter;
+    font-size: 1.5rem;
+  }
 }
 
 .thumbs-up {
