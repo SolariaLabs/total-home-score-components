@@ -96,6 +96,7 @@ export const factorDescriptionsByScore: DefaultFactorDescriptions = {
     laundry: 'Low density of nearby laundry/dry-cleaning',
     pet_care: 'Low density of nearby pet-care shops',
     retail_alcohol: 'Low density of nearby liquor stores',
+    retail_alchohol: 'Low density of nearby liquor stores',
     retail_appliances: 'Low density of nearby appliance stores',
     retail_convenience: 'Low density of nearby convenience stores',
     retail_food: 'Low density of nearby small food stores',

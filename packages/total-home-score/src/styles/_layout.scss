@@ -2,7 +2,7 @@
   color: $dark-gray;
   line-height: 1.25rem;
   max-width: 900px;
-  min-width: 320px;
+  min-width: 360px;
 }
 
 .total-home-score-intro {
@@ -28,27 +28,57 @@
   border: 1px solid rgba(black, 0.125);
   border-bottom: none;
   display: flex;
-  flex-wrap: wrap;
   flex: 1 1 100%;
-  height: 11rem;
+  height: 15rem;
   padding: 1.33rem 1.33rem;
 
   @include small-view {
-    height: 17rem;
+    height: 25rem;
+    position: relative;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .score-overview-container {
+    display: flex;
+    height: 100%;
+    width: 25%;
+    flex-direction: column;
+    justify-content: center;
+
+    .fa-question-circle {
+      margin-left: 5px;
+    }
+  }
+
+  .score-details-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 75%;
+    line-height: 1.25;
+    margin-top: 0.5rem;
+
+    .score-level-description {
+      margin-bottom: 0.5rem;
+
+      @include small-view {
+        position: absolute;
+        top: 1rem;
+        left: 25%;
+        margin-top: 4rem;
+        margin-left: 3rem;
+      }
+    }
   }
 }
 
 .score-circle-container {
-  margin-bottom: 1rem;
-  height: 5rem;
+  margin-bottom: 1.5rem;
 }
 
 .score-level-container {
   margin-bottom: 1rem;
-
-  @include small-view {
-    margin-top: -4rem;
-  }
 }
 
 .ths-score-tab,
@@ -118,21 +148,25 @@
 }
 
 .score-factor-details {
-  margin-top: -4.25rem;
 
   @include small-view {
-    margin-top: 0px;
+    margin-left: 2rem;
+  }
+
+  .score-factor-list {
+    margin-top: 0.25rem;
+    margin-left: -2rem;
   }
 }
 
 .score-level-title {
-  margin-left: -25%;
-  margin-top: 5rem;
   text-align: center;
 
   @include small-view {
-    margin-left: 0px;
-    margin-top: 0px;
-    text-align: left;
+    top: 0;
+    left: 25%;
+    position: absolute;
+    margin-top: 3rem;
+    margin-left: 3rem;
   }
 }
