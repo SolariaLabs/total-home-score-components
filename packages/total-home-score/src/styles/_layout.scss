@@ -144,6 +144,8 @@
   @include medium-view {
     border-left: none;
     border-right: none;
+    position: relative;
+    z-index: 1;
   }
 }
 
