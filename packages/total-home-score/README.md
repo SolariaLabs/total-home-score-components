@@ -14,8 +14,8 @@ If your app needs to process the score results directly, such as hiding the comp
 
 ```javascript
 import React from 'react';
-import TotalHomeScore from '@shine-api/total-home-score';
 
+import TotalHomeScore from '@shine-api/total-home-score';
 import '@shine-api/total-home-score/dist/main.css';
 
 const apiKey = 'API_KEY_FROM_SHINE_API';
