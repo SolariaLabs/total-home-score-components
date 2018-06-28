@@ -74,7 +74,7 @@
 
   & > .arrow {
     fill: $dark-gray;
-    height: 1.5rem;
+    height: 2rem;
   }
 
   &.disabled {
@@ -88,4 +88,12 @@
   &.visible {
     display: block;
   }
+}
+
+.ths-score-tab-previous {
+  margin-right: 5px;
+}
+
+.ths-score-tab-next {
+  margin-left: 5px;
 }
