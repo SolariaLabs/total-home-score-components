@@ -1,5 +1,8 @@
 import { DefaultFactorDescriptions } from '../types';
 
+export const noFactors = 
+  'Good news! There were no noticeable factors to deduct from this score.';
+
 export const factorDescriptionsByScore: DefaultFactorDescriptions = {
   quiet: {
     air_traffic: 'Proximity to aircraft traffic',

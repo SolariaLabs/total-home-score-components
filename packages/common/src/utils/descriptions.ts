@@ -1,4 +1,4 @@
-import { factorDescriptionsByScore, scoreDescriptions } from '../resources';
+import { factorDescriptionsByScore, noFactors, scoreDescriptions } from '../resources';
 import { findIdByScore, findOrDefaultByScore } from '.';
 import {
   CustomDescriptions,
@@ -11,12 +11,14 @@ import {
 
 export const getFactorDescriptions =
   (id: string, factors: Factors, custom?: CustomDescriptions): string[] =>
-    Object.keys(factors)
-    .map((factor: string) => 
-      (custom && custom.factors && custom.factors[factor])
-        ? custom.factors[factor]
-        : factorDescriptionsByScore[id][factor]
-    );
+    (Object.keys(factors).length > 0)
+    ? Object.keys(factors)
+        .map((factor: string) => 
+          (custom && custom.factors && custom.factors[factor])
+            ? custom.factors[factor]
+            : factorDescriptionsByScore[id][factor]
+        )
+    : [noFactors];
 
 export const getScoreDescriptions = 
   (id: string, value: number, custom?: CustomDescriptions): ScoreDescriptions => {
