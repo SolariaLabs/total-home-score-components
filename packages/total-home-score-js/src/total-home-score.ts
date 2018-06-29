@@ -1,5 +1,6 @@
-import { fetchScores, ApiParameters, DetailedScore } from '@shine-api/common';
-import { loadScoreCards } from './score-cards';
+import { fetchScores, log, ApiParameters, DetailedScore } from '@shine-api/common';
+import { controllers } from './controllers';
+import * as TotalHomeScore from './components/TotalHomeScore.hbs';
 
 declare global {
   interface Window { 
@@ -11,15 +12,37 @@ type TotalHomeScoreProps = ApiParameters & {
   id: string;
 };
 
-export const loadTHSWidget = (totalHomeProps?: TotalHomeScoreProps) => {
-  if (!totalHomeProps) {
-    console.error('Missing required parameters for loading Total Home Score Widget.');
-    return Promise.resolve();
+const displayWidgetContainer = () => {
+  const { TotalHomeScore: thsProps } = window;
+  const parent = document.getElementById(thsProps.id);
+
+  if (!parent) {
+    log(`Missing parent element: [${thsProps.id}]`);
+    return Promise.reject({});
   }
 
-  return fetchScores(totalHomeProps)
-    .then((scores: DetailedScore[]) => loadScoreCards(totalHomeProps.id, scores));
+  parent.innerHTML = TotalHomeScore({ loading: true });
+
+  fetchScores(thsProps)
+    .then((scores: DetailedScore[]) => {
+      thsProps.scores = scores;
+      parent.innerHTML = TotalHomeScore({ scores, selectedScore: scores[0] });
+      controllers.forEach((controller: Function) => controller());
+    });
+
 };
 
+export const loadTHSWidget = () => {
+  const { TotalHomeScore: thsProps } = window;
 
-loadTHSWidget(window.TotalHomeScore);
+  document.removeEventListener('DOMContentLoaded', loadTHSWidget);
+
+  if (!thsProps) {
+    log('Missing required parameters for loading Total Home Score Widget.');
+    return Promise.reject({});
+  }
+
+  return displayWidgetContainer();
+};
+
+document.addEventListener('DOMContentLoaded', loadTHSWidget);
