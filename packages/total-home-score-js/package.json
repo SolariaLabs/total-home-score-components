@@ -1,6 +1,6 @@
 {
   "name": "@shine-api/total-home-score-js",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "description": "A plain javascript widget for Total Home Score",
   "main": "index.js",
   "scripts": {

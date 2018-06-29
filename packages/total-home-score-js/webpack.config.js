@@ -21,6 +21,10 @@ module.exports = {
         loader: 'happypack/loader?id=ts'
       },
       {
+        test: /\.hbs$/, 
+        loader: 'handlebars-loader'
+      },
+      {
         test: /\.s?css$/,
         exclude: /node_modules/,
         use: [
