@@ -1,0 +1,30 @@
+<div class= 'ths-score-card' id='ths-score-card'>
+  <div class= 'score-overview-container'>
+    <div class= 'score-circle-container'>
+      <div class= 'score-circle score-{{colorClass}}'>
+        {{value}}
+      </div>
+    </div>
+    <div class= 'score-level-title'>
+      {{descriptions.score.display}}
+      <i data-toggle="tooltip" title="{{hint}}" class= 'fa fa-question-circle'></i>
+    </div>
+  </div>
+  <div class= 'score-details-container'>
+    <div class= 'score-level-container'>
+      <div class= 'score-level-description'>
+        {{descriptions.score.description}}
+      </div>
+    </div>
+    <div class= 'score-factor-details'>
+      <div class= 'score-factors-title'>
+        Why were points deducted?
+      </div>
+      <ul class= 'score-factor-list'>
+        {{#each descriptions.factors}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

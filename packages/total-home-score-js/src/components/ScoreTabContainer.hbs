@@ -1,0 +1,11 @@
+<div class='ths-score-tab-container' id='ths-score-tab-container'>
+  <div id='ths-score-previous' class='ths-score-tab-previous {{enableNav}} {{disablePrevArrow}}'>
+    {{> ../svgs/LeftArrow}}
+  </div>
+  {{#each scores}}
+    {{> ScoreTab}}
+  {{/each}}
+  <div id='ths-score-next' class='ths-score-tab-next {{enableNav}} {{disableNextArrow}}'>
+    {{> ../svgs/RightArrow}}
+  </div>
+</div>
