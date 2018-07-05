@@ -2,7 +2,7 @@
   color: $dark-gray;
   line-height: 1.25rem;
   max-width: 900px;
-  min-width: 360px;
+  min-width: 280px;
 }
 
 .total-home-score-intro {
@@ -70,6 +70,10 @@
         margin-left: 3rem;
       }
     }
+
+    @include small-view {
+      width: 100%;
+    }
   }
 }
 
@@ -79,6 +83,10 @@
 
 .score-level-container {
   margin-bottom: 1rem;
+
+  @include xsmall-view {
+    margin-bottom: 0;
+  }
 }
 
 .ths-score-tab,
