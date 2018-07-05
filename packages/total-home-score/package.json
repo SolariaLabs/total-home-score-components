@@ -1,6 +1,6 @@
 {
   "name": "@shine-api/total-home-score",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "A react component for Total Home Score",
   "main": "dist/TotalHomeScore.js",
   "scripts": {
